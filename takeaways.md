@@ -22,6 +22,16 @@ _Version 1, written on the morning of 27 September 2026 from the event materials
 
 **7. Humans keep authorship, and AI use is disclosed.** Any AI or tool is allowed; material use is disclosed; people remain the authors. Accepted results become a public, checkable record that the next team can build on.
 
-## 2. Observed at the event
+## 2. What our own run taught us (27 September, before the demos)
+
+**8. Throughput beats cleverness until it doesn't.** Moving the matrix-multiplication flip search from Python to C bought roughly a 10x speedup. Adding a better move (a triangle reduction) found in seconds what had taken minutes. After that, 17 of 43 fresh seeds and six distinct schemes all stopped at exactly support 139, as did both teams already leading. That is evidence of a real wall, and more compute does not move a wall.
+
+**9. Seeds matter more than search.** The winning matrix-multiplication lineage started from one scheme in the Heule, Kauers and Seidl repository, not from the famous Laderman scheme. Laderman's scheme has no two terms sharing a factor, so a flip walk starting from it cannot move at all.
+
+**10. Exact objectives make search cheap.** For K4 Ramsey multiplicity, the hill's density reduces to integer clique counts, so each candidate edge flip costs microseconds and the running total can be checked against a full recount. Verify that identity before trusting any search built on it.
+
+**11. Every number was machine-checked before we claimed it.** A sign error in one reduction rule produced an invalid scheme within seconds. The exact validator caught it before anything was reported, and the evaluator-first habit paid for itself immediately.
+
+## 3. Observed at the event
 
 _To be added after the 20:00 final presentations: which hills teams chose, what loops they built, what worked, what broke, and anything the guest speakers said that changes the picture above._
